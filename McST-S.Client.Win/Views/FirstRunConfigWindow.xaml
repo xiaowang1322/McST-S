@@ -1,0 +1,47 @@
+﻿<Window x:Class="McST_S.Client.Win.Views.FirstRunConfigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:McST_S.Client.Win.Views"
+        mc:Ignorable="d"
+        Title="McST-S 首次配置" 
+        Height="350" 
+        Width="500"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- 标题 -->
+        <TextBlock Grid.Row="0" Text="欢迎使用 McST-S" FontSize="16" FontWeight="Bold" Margin="0,0,0,20"/>
+
+        <!-- 服务端地址 -->
+        <TextBlock Grid.Row="1" Text="服务端地址:" Margin="0,0,0,5"/>
+        <TextBox Grid.Row="2" x:Name="ServerUrlTextBox" Margin="0,0,0,10" 
+                 TextChanged="ServerUrlTextBox_TextChanged"/>
+
+        <!-- 版本号 -->
+        <TextBlock Grid.Row="3" Text="当前版本号 (x.x.x.x格式):" Margin="0,10,0,5"/>
+        <TextBox Grid.Row="4" x:Name="VersionTextBox" Margin="0,0,0,15"
+                 TextChanged="VersionTextBox_TextChanged"/>
+
+        <!-- 错误信息 -->
+        <TextBlock Grid.Row="5" x:Name="ErrorMessageText" Foreground="Red" 
+                   TextWrapping="Wrap" Margin="0,0,0,10" Visibility="Collapsed"/>
+
+        <!-- 按钮 -->
+        <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="SaveButton" Content="保存并退出" Width="100" Margin="0,0,10,0" 
+                    Click="SaveButton_Click" IsEnabled="False"/>
+        </StackPanel>
+    </Grid>
+</Window>
