@@ -5,8 +5,80 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:McST_S.Client.Win"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="McST-S" 
+        Height="600" 
+        Width="900"
+        WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- 顶部导航栏 -->
+        <Menu Grid.Row="0" Background="#FF2D2D30">
+            <MenuItem Header="文件">
+                <MenuItem Header="设置"/>
+                <Separator/>
+                <MenuItem Header="退出" Click="ExitMenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="账户">
+                <MenuItem Header="添加账户"/>
+                <MenuItem Header="管理账户"/>
+            </MenuItem>
+            <MenuItem Header="帮助">
+                <MenuItem Header="关于"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- 主内容区域 -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- 左侧边栏 -->
+            <StackPanel Grid.Column="0" Background="#FF252526">
+                <Button Content="游戏启动" Style="{StaticResource SidebarButtonStyle}"/>
+                <Button Content="版本管理" Style="{StaticResource SidebarButtonStyle}"/>
+                <Button Content="模组管理" Style="{StaticResource SidebarButtonStyle}"/>
+                <Button Content="资源下载" Style="{StaticResource SidebarButtonStyle}"/>
+            </StackPanel>
+
+            <!-- 右侧内容 -->
+            <Grid Grid.Column="1" Background="#FF1E1E1E">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="欢迎使用 McST-S" FontSize="24" Foreground="White" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+
+                    <!-- 版本选择 -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+                        <TextBlock Text="版本:" Foreground="White" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <ComboBox x:Name="VersionComboBox" Width="150"/>
+                    </StackPanel>
+
+                    <!-- 账户选择 -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+                        <TextBlock Text="账户:" Foreground="White" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                        <ComboBox x:Name="AccountComboBox" Width="150"/>
+                    </StackPanel>
+
+                    <!-- 启动按钮 -->
+                    <Button x:Name="LaunchButton" Content="启动游戏" Width="120" Height="40" 
+                            Click="LaunchButton_Click" FontSize="16"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+        <!-- 底部状态栏 -->
+        <StatusBar Grid.Row="2" Background="#FF007ACC">
+            <StatusBarItem>
+                <TextBlock x:Name="StatusText" Text="就绪" Foreground="White"/>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <TextBlock x:Name="VersionText" Text="版本: 1.0.0.0" Foreground="White" Margin="10,0,0,0"/>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </Window>

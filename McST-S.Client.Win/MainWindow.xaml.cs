@@ -1,27 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Windows;
+using McST_S.Client.Common;
+using McST_S.Shared.Models;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace McST_S.Client.Win
 {
-    /// <summary>
-    /// MainWindow.xaml 的交互逻辑
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+            Loaded += MainWindow_Loaded;
+        }
+
+        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            await LoadConfigAsync();
+        }
+
+        private async Task LoadConfigAsync()
+        {
+            var config = await ServiceLocator.ConfigService.LoadConfigAsync();
+            VersionText.Text = $"版本: {config.CurrentVersion}";
+            StatusText.Text = "就绪";
+        }
+
+        private void ExitMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void LaunchButton_Click(object sender, RoutedEventArgs e)
+        {
+            StatusText.Text = "启动游戏中...";
+            // 这里将实现启动逻辑
+            MessageBox.Show("启动游戏功能尚未实现", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+            StatusText.Text = "就绪";
         }
     }
 }
