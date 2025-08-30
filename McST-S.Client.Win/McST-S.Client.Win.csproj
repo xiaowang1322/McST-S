@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>McST_S.Client.Win</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+	<RuntimeIdentifiers>win-x64;win-x86;win-arm64</RuntimeIdentifiers>
+	<PublishSingleFile>true</PublishSingleFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\McST-S.Client.Common\McST-S.Client.Common.csproj" />
+    <ProjectReference Include="..\McST-S.Shared\McST-S.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
