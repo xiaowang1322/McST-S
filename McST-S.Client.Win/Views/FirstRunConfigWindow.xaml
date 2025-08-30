@@ -40,7 +40,7 @@
 
         <!-- 按钮 -->
         <StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button x:Name="SaveButton" Content="保存并退出" Width="100" Margin="0,0,10,0" 
+            <Button x:Name="SaveButton" Content="保存" Width="100" Margin="0,0,10,0" 
                     Click="SaveButton_Click" IsEnabled="False"/>
         </StackPanel>
     </Grid>

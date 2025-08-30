@@ -2,16 +2,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="McST_S.Client.Linux.App">
 	<Application.Styles>
-		<Style Selector="Button.SidebarButton">
-			<Setter Property="Background" Value="Transparent"/>
+		<Style Selector="Button.PrimaryButton">
+			<Setter Property="Background" Value="#FF007ACC"/>
 			<Setter Property="Foreground" Value="White"/>
-			<Setter Property="BorderThickness" Value="0"/>
-			<Setter Property="HorizontalContentAlignment" Value="Left"/>
-			<Setter Property="Padding" Value="10,8"/>
+			<Setter Property="Padding" Value="10,5"/>
 		</Style>
 
-		<Style Selector="Button.SidebarButton:pointerover">
-			<Setter Property="Background" Value="#FF3E3E40"/>
+		<Style Selector="Button.PrimaryButton:pointerover">
+			<Setter Property="Background" Value="#FF1C97EA"/>
+		</Style>
+
+		<Style Selector="Button.PrimaryButton:pressed">
+			<Setter Property="Background" Value="#FF0062A3"/>
+		</Style>
+
+		<Style Selector="TextBox">
+			<Setter Property="Padding" Value="5"/>
+			<Setter Property="Background" Value="White"/>
+			<Setter Property="Foreground" Value="Black"/>
 		</Style>
 	</Application.Styles>
 </Application>

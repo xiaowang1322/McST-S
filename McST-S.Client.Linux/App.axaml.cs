@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using McST_S.Client.Common;
-using McST_S.Client.Linux.Views;
+using McST_S.Client.Linux.Views; // 添加这行
 using System.Threading.Tasks;
 
 namespace McST_S.Client.Linux
@@ -29,7 +29,7 @@ namespace McST_S.Client.Linux
                 else
                 {
                     // 如果不是第一次运行，显示主窗口
-                    desktop.MainWindow = new MainWindow();
+                    desktop.MainWindow = new MainWindow(); // 现在应该可以找到 MainWindow 了
                 }
             }
 

@@ -18,15 +18,18 @@
 		</Grid.RowDefinitions>
 
 		<!-- 标题 -->
-		<TextBlock Grid.Row="0" Text="欢迎使用 McST-S" FontSize="16" FontWeight="Bold" Margin="0,0,0,20"/>
+		<TextBlock Grid.Row="0" Text="欢迎使用 McST-S" FontSize="16" FontWeight="Bold" Margin="0,0,0,20"
+                   HorizontalAlignment="Center"/>
 
 		<!-- 服务端地址 -->
-		<TextBlock Grid.Row="1" Text="服务器地址:" Margin="0,0,0,5"/>
-		<TextBox Grid.Row="2" x:Name="ServerUrlTextBox" Margin="0,0,0,10"/>
+		<TextBlock Grid.Row="1" Text="服务端地址:" Margin="0,0,0,5" VerticalAlignment="Center"/>
+		<TextBox Grid.Row="2" x:Name="ServerUrlTextBox" Margin="0,0,0,10" Height="30"
+                 Watermark="请输入服务端URL (例如: https://example.com)"/>
 
 		<!-- 版本号 -->
-		<TextBlock Grid.Row="3" Text="当前版本号 (x.x.x.x格式):" Margin="0,10,0,5"/>
-		<TextBox Grid.Row="4" x:Name="VersionTextBox" Margin="0,0,0,15"/>
+		<TextBlock Grid.Row="3" Text="当前版本号 (x.x.x.x格式):" Margin="0,10,0,5" VerticalAlignment="Center"/>
+		<TextBox Grid.Row="4" x:Name="VersionTextBox" Margin="0,0,0,15" Height="30"
+                 Watermark="例如: 1.0.0.0"/>
 
 		<!-- 错误信息 -->
 		<TextBlock Grid.Row="5" x:Name="ErrorMessageText" Foreground="Red"
@@ -34,8 +37,8 @@
 
 		<!-- 按钮 -->
 		<StackPanel Grid.Row="6" Orientation="Horizontal" HorizontalAlignment="Right">
-			<Button x:Name="SaveButton" Content="保存并退出" Width="100" Margin="0,0,10,0"
-                    IsEnabled="False"/>
+			<Button x:Name="SaveButton" Content="保存并退出" Width="100" Height="30"
+                    IsEnabled="False" Classes="PrimaryButton"/>
 		</StackPanel>
 	</Grid>
 </UserControl>
